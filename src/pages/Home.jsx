@@ -29,10 +29,12 @@ const Home = () => {
         {articles.map(article => ( 
             <div key={article.id} className="article"> 
                 <Link to={{ pathname: `/articles/${article.id}` }}>    
-                    <h2>{article.title}</h2><br/>
+                    <img alt={article.title} src={article.image}/>
+                    <h2>{article.title}</h2>
+                    <span className="cateogry">{article.category}</span><br/>
                     {article.description}<br/>
                 </Link>
-                <button><Link to={{ pathname: `/detail/${article.id}` }}>Lire la suite</Link></button>
+                <button><Link to={article.url}>Lire la suite</Link></button>
             </div>    
         ))} 
     </div>
